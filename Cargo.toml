@@ -1,22 +1,22 @@
 [package]
-name = "flutter-app-template"
-version = "0.1.0"
 authors = ["David Craven <david@craven.ch>"]
 edition = "2018"
+name = "flutter-app-template"
+version = "0.1.0"
 
 [dependencies]
-env_logger = "0.7.1"
-flutter-engine = { git = "https://github.com/flutter-rs/flutter-rs" }
-flutter-winit = { git = "https://github.com/flutter-rs/flutter-rs" }
-glutin = { git = "https://github.com/dvc94ch/glutin", branch = "android" }
-log = "0.4.8"
+env_logger = "0.8.2"
+flutter-engine = {path = "../flutter-rs/flutter-engine"}
+flutter-winit = {path = "../flutter-rs/flutter-winit"}
+glutin = "0.26.0"
+log = "0.4.11"
 
 [target.'cfg(target_os = "android")'.dependencies]
-android_glue = { git = "https://github.com/rust-windowing/android-rs-glue" }
-android_logger = "0.8.6"
-android-ndk = { git = "https://github.com/rust-windowing/android-ndk-rs" }
+# android_glue = {git = "https://github.com/rust-windowing/android-rs-glue"}
+android_logger = "0.9.2"
 jni-glue = "0.0.10"
+ndk = {git = "https://github.com/rust-windowing/android-ndk-rs"}
 
 [target.'cfg(target_os = "android")'.dependencies.jni-android-sys]
-version = "0.0.10"
 features = ["api-level-18", "android-content-Context", "android-content-pm-ApplicationInfo"]
+version = "0.0.10"
